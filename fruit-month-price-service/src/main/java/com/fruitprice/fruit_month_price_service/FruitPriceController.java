@@ -1,5 +1,7 @@
 package com.fruitprice.fruit_month_price_service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,11 @@ public class FruitPriceController {
         String port = environment.getProperty("local.server.port");
         fruitPrice.setEnvironment(port);
         return fruitPrice;
+    }
+
+    @GetMapping("/fruit-price/fruits")
+    public List<String> getAllFruits() {
+        return repository.findAllFruits();
     }
 }
 

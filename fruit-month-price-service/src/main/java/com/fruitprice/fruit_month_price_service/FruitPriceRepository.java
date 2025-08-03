@@ -12,7 +12,4 @@ public interface FruitPriceRepository extends JpaRepository<FruitPrice, Long> {
     List<String> findAllFruits();
 
     List<FruitPrice> findByFruit(String fruit);
-
-
-
 }
