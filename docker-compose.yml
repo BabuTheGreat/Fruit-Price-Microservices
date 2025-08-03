@@ -23,6 +23,19 @@ services:
     networks:
       - fruit-network
 
+  frontend:
+    image: nginx:alpine
+    container_name: fruit-price-frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - fruit-month-price-service
+      - fruit-total-price-service
+    networks:
+      - fruit-network
+
 networks:
   fruit-network:
     driver: bridge

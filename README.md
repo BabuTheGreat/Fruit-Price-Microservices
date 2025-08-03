@@ -37,3 +37,9 @@ This service calculates the total price of an order based on the monthly price f
 
 1. `docker-compose up --build -d`
 2. Access the services on localhost using ports 8000 and 8100
+
+### Optional frontend
+
+Two ways to run the frontend:
+- By simply opening the `./frontend/index.html` file directly in a browser.
+- Through docker `docker-compose up --build -d frontend`.
