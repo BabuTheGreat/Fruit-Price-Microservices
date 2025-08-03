@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  fruit-month-price-service:
+    build:
+      context: ./fruit-month-price-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - fruit-network
+
+  fruit-total-price-service:
+    build:
+      context: ./fruit-total-price-service
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    environment:
+      - FRUIT_MONTH_SERVICE_URL=http://fruit-month-price-service:8000
+    depends_on:
+      - fruit-month-price-service
+    networks:
+      - fruit-network
+
+networks:
+  fruit-network:
+    driver: bridge
