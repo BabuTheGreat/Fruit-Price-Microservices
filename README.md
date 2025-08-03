@@ -25,12 +25,20 @@ This service calculates the total price of an order based on the monthly price f
 
 ### Using maven and spring-boot.
 
-1. cd `fruit-month-price-service`
-2. `./mvnw spring-boot:rungit status`
+#### Prerequisite
+
+- Make sure you have a local Zookeeper instance running on port 2181.
+
+#### Run fruit-month-price-service
+
+1. `cd fruit-month-price-service`
+2. `./mvnw spring-boot:run`
 3. Access the service on localhost using port 8000
 
-1. cd `fruit-total-price-service`
-2. `./mvnw spring-boot:rungit status`
+#### Run fruit-total-price-service
+
+1. `cd fruit-total-price-service`
+2. `./mvnw spring-boot:run`
 3. Access the service on localhost using port 8100
 
 ### Using Docker Compose
@@ -42,4 +50,4 @@ This service calculates the total price of an order based on the monthly price f
 
 Two ways to run the frontend:
 - By simply opening the `./frontend/index.html` file directly in a browser.
-- Through docker `docker-compose up --build -d frontend`.
+- Through docker along with the rest of the containers `docker-compose up --build -d frontend`.

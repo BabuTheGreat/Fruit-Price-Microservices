@@ -1,12 +1,26 @@
 version: '3.8'
 
 services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+    networks:
+      - fruit-network
+
   fruit-month-price-service:
     build:
       context: ./fruit-month-price-service
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    environment:
+      - SPRING_CLOUD_ZOOKEEPER_CONNECT_STRING=zookeeper:2181
+    depends_on:
+      - zookeeper
     networks:
       - fruit-network
 
@@ -17,8 +31,9 @@ services:
     ports:
       - "8100:8100"
     environment:
-      - FRUIT_MONTH_SERVICE_URL=http://fruit-month-price-service:8000
+      - SPRING_CLOUD_ZOOKEEPER_CONNECT_STRING=zookeeper:2181
     depends_on:
+      - zookeeper
       - fruit-month-price-service
     networks:
       - fruit-network
