@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Fruit Price Calculator</title>
     <style>
+        html {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .form-group {
             margin-bottom: 15px;
         }
@@ -105,8 +110,7 @@
         document.getElementById('fruitSelect').addEventListener('change', function(e) {
             const selectedFruit = e.target.value;
             if (selectedFruit) {
-                const capitalizedFruit = selectedFruit.charAt(0).toUpperCase() + selectedFruit.slice(1);
-                document.getElementById('fruitFilter').value = capitalizedFruit;
+                document.getElementById('fruitFilter').value = selectedFruit;
             }
         });
 
