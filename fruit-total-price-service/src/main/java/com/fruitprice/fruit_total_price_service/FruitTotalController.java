@@ -25,6 +25,6 @@ public class FruitTotalController {
             throw new RuntimeException("Unable to find fruit price for " + fruit + " in month " + month);
         }
         return new FruitTotal(fruitTotal.getId(), fruit, month, fruitTotal.getFmp(), quantity,
-                fruitTotal.getFmp() * quantity, fruitTotal.getEnvironment());
+                fruitTotal.getFmp() * quantity, fruitTotal.getPort());
     }
 }

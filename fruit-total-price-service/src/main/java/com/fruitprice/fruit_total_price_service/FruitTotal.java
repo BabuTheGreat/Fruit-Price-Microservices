@@ -11,18 +11,18 @@ public class FruitTotal {
     private int quantity;
     @JsonSerialize(using = DecStringSerializer.class)
     private double total;
-    private String environment;
+    private int port;
     public FruitTotal() {
     }
 
-    public FruitTotal(Long id, String fruit, String month, double fmp, int quantity, double total, String environment) {
+    public FruitTotal(Long id, String fruit, String month, double fmp, int quantity, double total, int port) {
         this.id = id;
         this.fruit = fruit;
         this.month = month;
         this.fmp = fmp;
         this.quantity = quantity;
         this.total = total;
-        this.environment = environment;
+        this.port = port;
     }
     public Long getId() {
         return id;
@@ -71,11 +71,11 @@ public class FruitTotal {
         this.total = total;
     }
 
-    public String getEnvironment() {
-        return environment;
+    public int getPort() {
+        return port;
     }
 
-    public void setEnvironment(String environment) {
-        this.environment = environment;
+    public void setPort(int port) {
+        this.port = port;
     }
 }

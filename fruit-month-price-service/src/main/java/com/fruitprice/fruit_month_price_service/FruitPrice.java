@@ -7,6 +7,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "fruit_month")
@@ -20,7 +21,8 @@ public class FruitPrice {
     @JsonSerialize(using = TwoDecSerializer.class)
     @Column(name = "fmp")
     private Double fmp;
-    private String environment;
+    @Transient
+    private int port;
 
     public FruitPrice() {
     }
@@ -57,11 +59,11 @@ public class FruitPrice {
     public void setFmp(Double fmp) {
         this.fmp = fmp;
     }
-    public String getEnvironment() {
-        return environment;
+    public int getPort() {
+        return port;
     }
 
-    public void setEnvironment(String environment) {
-        this.environment = environment;
+    public void setPort(int port) {
+        this.port = port;
     }
 }

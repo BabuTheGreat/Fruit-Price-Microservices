@@ -23,8 +23,8 @@ public class FruitPriceController {
         if (fruitPrice == null) {
             throw new RuntimeException("Fruit price not found for fruit: " + fruit + " and month: " + month);
         }
-        String port = environment.getProperty("local.server.port");
-        fruitPrice.setEnvironment(port);
+        int port = Integer.parseInt(environment.getProperty("local.server.port"));
+        fruitPrice.setPort(port);
         return fruitPrice;
     }
 
