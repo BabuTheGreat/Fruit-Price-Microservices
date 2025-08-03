@@ -1,7 +1,7 @@
 package com.fruitprice.fruit_month_price_service;
 
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,7 +18,7 @@ public class FruitPrice {
     private String fruit;
     @Column(name = "mon")
     private String month;
-    //@JsonSerialize(using = TwoDecSerializer.class)
+
     @Column(name = "fmp")
     private Double fmp;
     @Transient
