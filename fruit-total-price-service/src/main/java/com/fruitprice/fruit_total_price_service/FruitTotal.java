@@ -7,6 +7,7 @@ public class FruitTotal {
 
     private String fruit;
     private String month;
+    @JsonSerialize(using = DecStringSerializer.class)
     private double fmp;
     private int quantity;
     @JsonSerialize(using = DecStringSerializer.class)

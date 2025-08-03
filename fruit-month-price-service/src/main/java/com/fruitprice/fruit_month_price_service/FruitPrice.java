@@ -18,7 +18,7 @@ public class FruitPrice {
     private String fruit;
     @Column(name = "mon")
     private String month;
-    @JsonSerialize(using = TwoDecSerializer.class)
+    //@JsonSerialize(using = TwoDecSerializer.class)
     @Column(name = "fmp")
     private Double fmp;
     @Transient

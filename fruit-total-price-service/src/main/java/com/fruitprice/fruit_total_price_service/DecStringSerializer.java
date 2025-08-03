@@ -1,6 +1,8 @@
 package com.fruitprice.fruit_total_price_service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -12,12 +14,11 @@ public class DecStringSerializer extends JsonSerializer<Double> {
     @Override
     public void serialize(Double value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
         if (value != null) {
-            gen.writeString(df.format(value));
-        }
-        else {
+            BigDecimal rounded = BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP);
+            gen.writeString(df.format(rounded));
+        } else {
             gen.writeNull();
         }
     }
-
 
 }
