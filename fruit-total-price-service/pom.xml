@@ -11,7 +11,7 @@
 	<groupId>com.fruitprice</groupId>
 	<artifactId>fruit-total-price-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fruitTotal</name>
+	<name>fruit-total</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
