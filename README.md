@@ -29,7 +29,7 @@ This service calculates the total price of an order based on the monthly price f
 2. `./mvnw spring-boot:rungit status`
 3. Access the service on localhost using port 8000
 
-1. cd `fruit-ottal-price-service`
+1. cd `fruit-total-price-service`
 2. `./mvnw spring-boot:rungit status`
 3. Access the service on localhost using port 8100
 
