@@ -1,6 +1,6 @@
 # Fruit price microservices
 
-![Sequence Diagram](sequence_diagram.svg)
+![Sequence Diagram](sequence_diagram.jpg)
 
 ## Fruit price service
 
