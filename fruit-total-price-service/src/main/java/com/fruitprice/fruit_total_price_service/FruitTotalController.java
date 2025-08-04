@@ -14,11 +14,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @CrossOrigin(origins = "*")
 public class FruitTotalController {
-
-
     @Autowired
     private RestTemplate restTemplate;
-
 
     @GetMapping("/fruit-total/fruit/{fruit}/month/{month}/quantity/{quantity}")
     public FruitTotal retrieveFruitPrice(@PathVariable String fruit, @PathVariable String month,
