@@ -46,7 +46,16 @@ This service calculates the total price of an order based on the monthly price f
 1. `docker-compose up --build -d`
 2. Access the services on localhost using ports 8000 and 8100
 
-### Optional frontend
+#### Zookeeper
+
+To access service data in the zookeeper shell through Docker:
+
+1. sh into the container
+2. `zookeeper-shell localhost:2181`
+3. `ls /services`
+4. `get /services/fruit-total/{instance-id}`
+
+### Frontend
 
 Two ways to run the frontend:
 - By simply opening the `./frontend/index.html` file directly in a browser.
