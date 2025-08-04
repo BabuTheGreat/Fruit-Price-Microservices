@@ -1,5 +1,7 @@
 # Fruit price microservices
 
+![Sequence Diagram](sequence_diagram.svg)
+
 ## Fruit price service
 
 This service talks directly to the database to get the monthly price per kg of a fruit.
